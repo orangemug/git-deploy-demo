@@ -17,10 +17,10 @@ jobs:
       - run:
           name: Test
           command: npm test
-      - add_ssh_keys
       - run:
           name: Start SSH agent
-          command: eval $(ssh-agent -s); ssh-add ~/.ssh/id_rsa_*; sleep 10
+          command: eval $(ssh-agent -s); sleep 10; ssh-add ~/.ssh/id_rsa_*;
+      - add_ssh_keys
       - deploy:
           name: Deploy
           command: DEBUG=* node ./node_modules/.bin/git-deploy push .git-deploy/config.json
