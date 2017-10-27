@@ -1,0 +1,22 @@
+{
+  "local": {
+    "path": "${ARTIFACTS_DIR:-public}",
+    "git": {
+      "tags": true,
+      "branches": [
+        "master"
+      ]
+    }
+  },
+  "remote": {
+    "git": {
+      "url": "git@github.com:orangemug/git-build-push-demo-builds.git",
+      "path": "builds",
+      "branch": "master",
+      "author": {
+        "name": "Bot",
+        "email": "noreply@example.com"
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "test": "node tests/index.js"
+  },
+  "devDependencies": {
+    "git-deploy": "github:orangemug/git-deploy"
+  }
+}
