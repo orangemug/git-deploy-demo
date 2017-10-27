@@ -19,4 +19,4 @@ jobs:
           command: npm test
       - run:
           name: Deploy
-          command: git-deploy push .git-deploy/config.json
+          command: DEBUG=* node ./node_modules/.bin/git-deploy push .git-deploy/config.json
