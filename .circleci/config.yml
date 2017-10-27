@@ -41,7 +41,7 @@ workflows:
           filters:
             branches:
               only: master
-      - test:
+      - deploy:
           requires:
             - build
             - test
