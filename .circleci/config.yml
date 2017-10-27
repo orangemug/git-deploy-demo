@@ -21,6 +21,8 @@ jobs:
       - deploy:
           name: Deploy
           command: |
+            # Configure ssh-agent
             eval $(ssh-agent -s)
             ssh-add ~/.ssh/id_rsa_*
+            # Deploy the code
             ./node_modules/.bin/git-deploy push .git-deploy/config.json
