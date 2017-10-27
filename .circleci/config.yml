@@ -17,6 +17,9 @@ jobs:
       - run:
           name: Test
           command: npm test
+      - add_ssh_keys:
+          fingerprints:
+            - "06:ca:f6:d4:7a:3d:de:cb:0a:1e:56:50:1d:66:bd:5b"
       - run:
           name: Deploy
           command: DEBUG=* node ./node_modules/.bin/git-deploy push .git-deploy/config.json
