@@ -20,4 +20,7 @@ jobs:
       - add_ssh_keys
       - deploy:
           name: Deploy
-          command: ./node_modules/.bin/git-deploy push .git-deploy/config.json
+          command: |
+            eval $(ssh-agent -s)
+            ssh-add ~/.ssh/id_rsa_*
+            ./node_modules/.bin/git-deploy push .git-deploy/config.json
