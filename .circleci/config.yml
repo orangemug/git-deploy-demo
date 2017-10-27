@@ -14,38 +14,9 @@ jobs:
           key: dependency-cache-{{ checksum "package.json" }}
           paths:
             - node_modules
-  test:
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
       - run:
           name: Test
           command: npm test
-  deploy:
-    docker:
-      - image: circleci/node:8
-    steps:
-      - checkout
       - run:
           name: Deploy
           command: git-deploy push .git-deploy/config.json
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test:
-          requires:
-            - build
-          filters:
-            branches:
-              only: master
-      - deploy:
-          requires:
-            - build
-            - test
-          filters:
-            branches:
-              only: master
-            tags:
