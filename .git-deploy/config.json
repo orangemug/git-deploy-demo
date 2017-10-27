@@ -1,6 +1,6 @@
 {
   "local": {
-    "path": "${ARTIFACTS_DIR:-public}",
+    "path": "${ARTIFACTS_DIR:-.}",
     "git": {
       "tags": true,
       "branches": [
