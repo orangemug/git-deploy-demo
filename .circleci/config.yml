@@ -26,11 +26,8 @@ jobs:
             ssh-add ~/.ssh/id_rsa_*
             # Deploy the code
             ./node_modules/.bin/git-deploy push .git-deploy/config.json
-workflows:
-  version: 2
-  build-workflow:
-    jobs:
-      - build:
-        filters:
-          tags:
-            only: /.*/
+deployment:
+  fake_deploy_for_cci2:
+    tag: /.*/
+    commands:
+      - echo "make tags run in 2.0"
